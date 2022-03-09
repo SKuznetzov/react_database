@@ -1,12 +1,17 @@
 import React,{Component} from 'react';
 import './App.css';
+import Home from './pages/Home'
+import Upload from './pages/Upload';
 
 class App extends Component {
 
   
   render(){
     return (
-<h1>Привет!</h1>
+<div>
+  <Home />
+  <Upload />
+</div>
     )
   }
 }
