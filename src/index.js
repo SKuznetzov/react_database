@@ -5,7 +5,12 @@ import './index.css';
 
 const App = () => {
   return (
-    
+    <HashRouter>
+      <Switch>
+        <Route path='/' component={Home}/>
+        <Route path='/upload' component={Upload}/>
+      </Switch>
+    </HashRouter>
     )
 }
 
