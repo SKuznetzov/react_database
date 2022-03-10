@@ -6,6 +6,7 @@ const astraClient = await createClient({
     astraDatabaseRegion: process.env.ASTRA_DB_REGION,
     username: process.env.ASTRA_DB_USERNAME,
     password: process.env.ASTRA_DB_PASSWORD,
+})
 
 
 
