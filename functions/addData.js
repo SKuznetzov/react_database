@@ -1,9 +1,6 @@
 const { createClient } = require("@astrajs/collections")
 
-ASTRA_DB_ID = 34279e7a-6426-44b6-80b4-4db70fbb948b
-// ASTRA_DB_REGION = St.Ghislain,Belgium
-ASTRA_DB_USERNAME=
-ASTRA_DB_PASSWORD=
+const collection = 'posts'
 
 exports.handler = async function (event, context, callback) {
     const astraClient = await createClient({
@@ -12,9 +9,10 @@ exports.handler = async function (event, context, callback) {
       username: process.env.ASTRA_DB_USERNAME,
       password: process.env.ASTRA_DB_PASSWORD,
     })
-console.log(astraClient)
-
-
+    const posts = astraClient
+    .namespace(process.env.ASTRA_DB_KEYSPACE)
+    .collection('collection')
+  }
 
 
 
