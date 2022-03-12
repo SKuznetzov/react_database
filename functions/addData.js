@@ -1,6 +1,6 @@
 const { createClient } = require("@astrajs/collections")
 
-const collection = 'posts'
+const collection = 'tktposts'
 
 exports.handler = async function (event, context, callback) {
     const astraClient = await createClient({
@@ -11,7 +11,7 @@ exports.handler = async function (event, context, callback) {
     })
     const posts = astraClient
     .namespace(process.env.ASTRA_DB_KEYSPACE)
-    .collection('collection')
+    .collection(collection)
     
       const data = [
         {
