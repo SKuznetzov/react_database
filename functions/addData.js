@@ -12,7 +12,31 @@ exports.handler = async function (event, context, callback) {
     const posts = astraClient
     .namespace(process.env.ASTRA_DB_KEYSPACE)
     .collection('collection')
+  
+
+
+  try {
+    for (let i = 0; i < data.length; i++) {
+      await posts.create(data[i].id, data[i])
+    }
+
+    return {
+      statusCode: 200,
+    }
+  } catch (e) {
+    console.error(e);
+    return {
+      statusCode: 500,
+      body: JSON.stringify(e),
+    }
   }
+}
+
+
+
+
+
+
 
 
 
