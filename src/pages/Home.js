@@ -30,9 +30,24 @@ const Home = () => {
 
         return (
             <>
+    {descendingUsers && (
+
             <div className="container">
                 <FollowersColumn />
                 <div className="feed">
+                {descendingUsers.map((descendingUser, index) => (
+            <Card
+              key={index}
+              user={descendingUser}
+              
+            />
+          ))}          {descendingUsers.map((descendingUser, index) => (
+            <Card
+              key={index}
+              user={descendingUser}
+              toggleFollow={userToToggle => setUserToToggle(userToToggle)}
+            />
+          ))}     
                     <h1>Home</h1>
                 </div>
                 <div className="suggested-box">
@@ -44,6 +59,7 @@ const Home = () => {
                         </div>
                 </div>
             </div>
+    )}
             </>
         )
     }
