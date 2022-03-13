@@ -1,5 +1,10 @@
-import './Home.css'
+
 import FollowersColumn from '../components/FollowersColumn'
+import Card from '../components/Card'
+import MiniCard from '../components/MiniCard'
+import axios from 'axios'
+
+import './Home.css'
 const Home = () => {
         return (
             <div className="container">
