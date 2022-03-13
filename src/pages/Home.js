@@ -1,4 +1,4 @@
-
+import React, { useState, useEffect } from 'react'
 import FollowersColumn from '../components/FollowersColumn'
 import Card from '../components/Card'
 import MiniCard from '../components/MiniCard'
@@ -10,6 +10,9 @@ const Home = () => {
     const addData = async () => {
         await axios.post('/.netlify/functions/addData')
       }
+      useEffect(() => {
+        addData()
+      }, [])
         return (
             <div className="container">
                 <FollowersColumn />
