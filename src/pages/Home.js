@@ -6,6 +6,10 @@ import axios from 'axios'
 
 import './Home.css'
 const Home = () => {
+
+    const addData = async () => {
+        await axios.post('/.netlify/functions/addData')
+      }
         return (
             <div className="container">
                 <FollowersColumn />
