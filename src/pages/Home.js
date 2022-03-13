@@ -10,6 +10,11 @@ const Home = () => {
     const addData = async () => {
         await axios.post('/.netlify/functions/addData')
       }
+      const fetchData = async () => {
+        const results = await axios.get('/.netlify/functions/posts')
+        console.log(results.data)
+        setUsers(results.data)
+      }
       useEffect(() => {
         addData()
       }, [])
