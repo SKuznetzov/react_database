@@ -8,6 +8,9 @@ import './Home.css'
 const Home = () => {
     const [users, setUsers] = useState(null)
   let descendingUsers
+  let topFiveNotFollowing
+  let topFiveFollowing
+
 
     const addData = async () => {
         await axios.post('/.netlify/functions/addData')
@@ -36,7 +39,7 @@ const Home = () => {
     {descendingUsers && (
 
             <div className="container">
-                <FollowersColumn />
+                <FollowersColumn users={topFiveFollowing}/>
                 <div className="feed">
                 {descendingUsers.map((descendingUser, index) => (
             <Card
