@@ -7,6 +7,8 @@ import axios from 'axios'
 import './Home.css'
 const Home = () => {
     const [users, setUsers] = useState(null)
+  let descendingUsers
+
     const addData = async () => {
         await axios.post('/.netlify/functions/addData')
       }
@@ -19,7 +21,15 @@ const Home = () => {
         addData()
         fetchData()
       }, [])
+      if (users) {
+        descendingUsers = users.sort((a, b) => a.id < b.id ? 1 : -1)
+
+      }
+
+
+
         return (
+            <>
             <div className="container">
                 <FollowersColumn />
                 <div className="feed">
@@ -34,6 +44,7 @@ const Home = () => {
                         </div>
                 </div>
             </div>
+            </>
         )
     }
     
