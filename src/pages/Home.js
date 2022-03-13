@@ -6,7 +6,7 @@ import axios from 'axios'
 
 import './Home.css'
 const Home = () => {
-
+    const [users, setUsers] = useState(null)
     const addData = async () => {
         await axios.post('/.netlify/functions/addData')
       }
@@ -17,6 +17,7 @@ const Home = () => {
       }
       useEffect(() => {
         addData()
+        fetchData()
       }, [])
         return (
             <div className="container">
