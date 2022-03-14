@@ -61,8 +61,8 @@ const Home = () => {
                         <div className="suggested">
                             <h2 className="bold">Suggested accounts</h2>
                             <div className="break" />
-                    </div>
                         </div>
+                      </div>
                 </div>
             </div>
     )}
