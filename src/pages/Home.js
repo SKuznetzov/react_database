@@ -30,11 +30,11 @@ const Home = () => {
         const descendingFollowing = following.sort((a, b) => a.likes < b.likes ? 1 : -1)
         topFiveFollowing = descendingFollowing.slice(0, 5)
 
+        const notFollowing = users.filter((user) => user.is_followed === false)
+        const descendingNotFollowing = notFollowing.sort((a, b) => a.likes < b.likes ? 1 : -1)
+        topFiveNotFollowing = descendingNotFollowing.slice(0, 5)
       }
-
-
-
-        return (
+      return (
             <>
     {descendingUsers && (
 
@@ -42,12 +42,6 @@ const Home = () => {
                 <FollowersColumn users={topFiveFollowing}/>
                 <div className="feed">
                 {descendingUsers.map((descendingUser, index) => (
-            <Card
-              key={index}
-              user={descendingUser}
-              
-            />
-          ))}          {descendingUsers.map((descendingUser, index) => (
             <Card
               key={index}
               user={descendingUser}
@@ -61,6 +55,8 @@ const Home = () => {
                         <div className="suggested">
                             <h2 className="bold">Suggested accounts</h2>
                             <div className="break" />
+
+
                         </div>
                       </div>
                 </div>
