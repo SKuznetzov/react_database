@@ -55,7 +55,12 @@ const Home = () => {
                         <div className="suggested">
                             <h2 className="bold">Suggested accounts</h2>
                             <div className="break" />
-
+                            {topFiveNotFollowing.map((notFollowingUser, index) => (
+                <MiniCard 
+                  key={index} 
+                  user={notFollowingUser}
+		  	        />)
+		  	      )}
 
                         </div>
                       </div>
