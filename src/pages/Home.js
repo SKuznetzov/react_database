@@ -7,6 +7,7 @@ import axios from "axios";
 import "./Home.css";
 const Home = () => {
   const [users, setUsers] = useState(null);
+  const [userToToggle, setUserToToggle] = useState(null)
   let descendingUsers;
   let topFiveNotFollowing;
   let topFiveFollowing;
