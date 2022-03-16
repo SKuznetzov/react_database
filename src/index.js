@@ -5,6 +5,8 @@ import Header from './components/Header'
 import Home from './pages/Home'
 import Upload from './pages/Upload'
 // import App from './App'
+import "core-js/stable"
+import "regenerator-runtime/runtime"
 import './index.css';
 
 const App = () => {
