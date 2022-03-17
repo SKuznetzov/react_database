@@ -14,8 +14,8 @@ const App = () => {
     <HashRouter>
       <Header />
       <Switch>
-        <Route path='/upload' component={Upload}/>
         <Route path='/' component={Home}/>
+        <Route exact path='/upload' component={Upload}/>
       </Switch>
     </HashRouter>
     )
