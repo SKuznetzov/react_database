@@ -6,19 +6,7 @@ import "core-js/stable"
 import "regenerator-runtime/runtime"
 import './index.css';
 
-const App = () => {
-  return (
-    <HashRouter>
-      <Header />
-      <Switch>
-        <Route path='/' component={Home}/>
-        <Route exact path='/upload' component={Upload}/>
-      </Switch>
-    </HashRouter>
-    )
-}
 
-export default App
 
 ReactDOM.render(
   <React.StrictMode>
